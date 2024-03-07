@@ -6,7 +6,13 @@ namespace ChangeString
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.Write("Write a sentence:");
+            string sen = Console.ReadLine();
+            Console.Write("Type a single character:");
+            string cha = Console.ReadLine();
+
+            string output = sen + " " +cha;
+            Console.Write(output);
         }
     }
 }
