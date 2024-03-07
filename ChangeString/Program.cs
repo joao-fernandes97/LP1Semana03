@@ -11,7 +11,18 @@ namespace ChangeString
             Console.Write("Type a single character:");
             string cha = Console.ReadLine();
 
-            string output = sen + " " +cha;
+            string output = "";
+            foreach (char letter in sen)
+            {
+                if(letter == Char.Parse(cha))
+                {
+                    output += "X";
+                }else
+                {
+                    output += letter.ToString();
+                }
+            }
+            
             Console.Write(output);
         }
     }
