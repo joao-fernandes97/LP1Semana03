@@ -17,6 +17,17 @@ namespace ArrayMult
                 matrixB[0,0]=float.Parse(args[4]);
                 matrixB[0,1]=float.Parse(args[5]);
 
+                float[,] resultMatrix = new float[2,1];
+
+                for (int i = 0; i < resultMatrix.GetLength(0); i++)
+                {
+                    resultMatrix[i,0]=0;
+                    for (int k = 0; k < 2; k++)
+                    {
+                        resultMatrix[i,0] += matrixA[i,k]*matrixB[0,k];
+                    }
+                    Console.WriteLine(resultMatrix[i,0]);
+                }
             } else
             {
                 Console.WriteLine("Not enough args");
