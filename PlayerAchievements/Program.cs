@@ -9,9 +9,22 @@ namespace PlayerAchievements
             Console.Write("How many players?");
             int n = int.Parse(Console.ReadLine());
 
-            Achievements[] playerAchievemnts = new Achievements[n];
+            Achievements[] completion = new Achievements[n];
 
-            Console.WriteLine(playerAchievemnts.Length);
+            for (int i = 0; i < completion.Length; i++)
+            {
+                for (int j = 1; j< (1 << 3); j = j << 1)
+                {
+                    Console.Write($"Player {i+1}, did you {(Achievements)j}? (T/F)");
+                    string answer = Console.ReadLine();
+
+                    if(answer=="T")
+                    {
+                        completion[i] ^= (Achievements)j;
+                    }
+
+                }
+            }
         }
     }
 }
