@@ -25,6 +25,25 @@ namespace PlayerAchievements
 
                 }
             }
+
+            for (int k = 0; k < completion.Length; k++)
+            {
+                Achievements completionist = 
+                    Achievements.DefeatOptionalBoss |
+                    Achievements.FindHiddenLevel |
+                    Achievements.FinishGame;                        
+
+                bool isCompletionist = completion[k] == completionist;
+
+                Console.Write(completion[k]);
+                if(isCompletionist)
+                {
+                    Console.WriteLine(", Completionist!");
+                } else
+                {
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
